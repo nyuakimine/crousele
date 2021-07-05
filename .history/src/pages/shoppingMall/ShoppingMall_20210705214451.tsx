@@ -8,7 +8,7 @@ import { RootState } from "../../redux/store";
 import "./ShoppingMall.css";
 import { FirstComponent } from "./FirstComponent";
 import { Carousel } from "../../components/NewBeeCarousel";
-import { HotGoodses } from "../../components/hotGoodses";
+import { HotGoodses} from "../../components/hotGoodses";
 
 export const ShoppingMall: React.FC = () => {
   let categories: any = useSelector((s: RootState) => s.categories);
@@ -19,9 +19,8 @@ export const ShoppingMall: React.FC = () => {
     dispatch(fetchCategoriesDataActionCreator());
   }, []);
 
-  let hotGoodses: any = useSelector(
-    (s: RootState) => s.hotGoodses.hotGoodseList.data
-  );
+  let hotGoodses: any = useSelector((s: RootState) => s.hotGoodses.hotGoodseList.data);
+
 
   const onMouseOverHandler = (e) => {
     console.log(e.currentTarget);
@@ -68,7 +67,9 @@ export const ShoppingMall: React.FC = () => {
         </div>
         <Carousel></Carousel>
       </div>
-      <HotGoodses data={hotGoodses}></HotGoodses>
+     <HotGoodses data={hotGoodses}>
+        
+     </HotGoodses>
     </div>
   );
 };

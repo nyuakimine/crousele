@@ -2,13 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { fetchCategoriesDataActionCreator } from "../../redux/shoppingMall/fetchCategoriesActions";
-//import { fetchHotGoodsesDataActionCreator } from "../../redux/shoppingMall/fetchHotGoodsesActions";
 import { RootState } from "../../redux/store";
 //import { CategoriesState } from "../../redux/shoppingMall/fetchCategoriesReducer";
 import "./ShoppingMall.css";
 import { FirstComponent } from "./FirstComponent";
 import { Carousel } from "../../components/NewBeeCarousel";
-import { HotGoodses } from "../../components/hotGoodses";
+import { HotGoodses} from "../../components/hotGoodses";
 
 export const ShoppingMall: React.FC = () => {
   let categories: any = useSelector((s: RootState) => s.categories);
@@ -18,10 +17,6 @@ export const ShoppingMall: React.FC = () => {
     console.log("in shoppngMall.tsx file ");
     dispatch(fetchCategoriesDataActionCreator());
   }, []);
-
-  let hotGoodses: any = useSelector(
-    (s: RootState) => s.hotGoodses.hotGoodseList.data
-  );
 
   const onMouseOverHandler = (e) => {
     console.log(e.currentTarget);
@@ -68,7 +63,9 @@ export const ShoppingMall: React.FC = () => {
         </div>
         <Carousel></Carousel>
       </div>
-      <HotGoodses data={hotGoodses}></HotGoodses>
+     <HotGoodses
+     ids={ids}
+     ></HotGoodses>
     </div>
   );
 };

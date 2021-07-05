@@ -42,6 +42,7 @@ export const Carousel: React.FC = () => {
       >
         {carousels.carouselUrl.data.map((img) =>{
           console.log(img);
+
           return <SwiperSlide>
             <img src={img.carouselUrl} alt="" />
             
