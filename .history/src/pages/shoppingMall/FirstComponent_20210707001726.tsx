@@ -26,10 +26,10 @@ export const FirstComponent: React.FC<ifProps> = ({
       </h3>
       <div className="item-list">
         <div className="subitem">
-          {category.secondLevelCategoryVOS.map((vos2, secondIdx) => {
+          {category.secondLevelCategoryVOS.map((vos2, secondIdx,index2) => {
             return (
               <SecondComponent
-                key={secondIdx}
+              key={index2}
                 Idx={secondIdx}
                 categoryName={vos2.categoryName}
                 vos2={vos2}

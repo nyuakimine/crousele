@@ -16,9 +16,7 @@ const initialState: ShoppingCarttate = {
 export const getShoppingCart = createAsyncThunk(
   "shoppingCart/getShoppingCart",
   async (jwt: string, thunkAPI) => {
-    console.log(jwt);
-    const { data } = await axios.get(
-      
+    const { data } = await axios.post(
       `http://123.56.149.216:8089/api/shoppingCart`,
       {
         headers: {

@@ -144,7 +144,7 @@ export const NewBeeFooter: React.FC = () => {
             <dl className="wx">
               <dt>newbee-mall</dt>
               <dd>
-                <img src="http://localhost:8081/mall/image/pay/wxpay_qrcode.png"></img>
+                <img src="@{http://localhost:8081/mall/image/pay/wxpay_qrcode.png}"></img>
               </dd>
               <dd className="other">
                 <span>分公司：</span>

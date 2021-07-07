@@ -13,13 +13,10 @@ interface isProps {
 }
 interface props2 {
   recommendGoodses: isProps[];
-  idxza1: number;
+  idxza: number;
 }
 
-export const RecommendGoodses: React.FC<props2> = ({
-  recommendGoodses,
-  idxza1,
-}) => {
+export const RecommendGoodses: React.FC<props2> = ({ recommendGoodses,idxza }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchNewAndRecommendGoodsesDataActionCreator());
@@ -28,13 +25,13 @@ export const RecommendGoodses: React.FC<props2> = ({
   return recommendGoodses === undefined ? (
     <h2>recommendGoodses</h2>
   ) : (
-    <div id="recommend" key={idxza1} >
+    <div id="recommend" key={idxza}>
       <h2>为你推荐</h2>
       <a href="##" className="more">
         查看更多{">>"}
       </a>
       <ul>
-        {recommendGoodses.map((goods, idxza) => {
+        {recommendGoodses.map((goods,idxza) => {
           //console.log(goods);
           return (
             <li key={idxza}>
@@ -48,7 +45,7 @@ export const RecommendGoodses: React.FC<props2> = ({
                 ></img>
                 <p className="name">{goods.goodsName}</p>
                 <p className="item_price">{goods.sellingPrice}</p>
-                <p className="counter">猜你喜欢</p>
+                <p className="counter">猜你喜欢</p>               
                 <div className="comment">
                   <p>新蜂精选</p>
                   <p>好物也可以不贵</p>

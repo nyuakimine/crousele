@@ -14,19 +14,19 @@ interface ifProps {
 interface pIf {
   data: ifProps[];
   idx6: number;
- // idx1:number;
+  idx1:number;
 }
-export const HotGoodses: React.FC<pIf> = ({ data ,idx6}) => {
+export const HotGoodses: React.FC<pIf> = ({ data ,idx6,idx1}) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHotGoodsesDataActionCreator());
   }, []);
   return data === undefined?(<h2>data</h2>): (
     <div id="sub_banner" key={idx6}>
-      {data.map((goods,idxc) => {
-        console.log(idxc);
+      {data.map((goods) => {
+        console.log(idx6);
         return (
-          <div className="hot-image" key={idxc}>
+          <div className="hot-image" key={idx1}>
             <a
               href={`http://localhost:8081/goods/detail/goodsId=${goods.goodsId}`}
             >               

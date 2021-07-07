@@ -14,11 +14,15 @@ import { Image, Carousel as AntCarousel } from "antd";
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
 
+interface pIf {
+ 
+ // idx3: any;
+}
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
-export const Carousel: React.FC = () => {
+export const Carousel: React.FC<pIf> = () => {
   let carousels: any = useSelector((s: RootState) => s.carousels);
   let loading = carousels.loading;
   const dispatch = useDispatch();

@@ -11,11 +11,10 @@ import { NewGoods } from "../../components/newGoods";
 import { RecommendGoodses } from "../../components/recommendGoodses";
 import { Fragment } from "../../components/headerFragment";
 import { NavFragment } from "../../components/fragment";
-import { NewBeeFooter } from "../../components/newBeeFooter";
+import{NewBeeFooter} from "../../components/newBeeFooter"
 
 export const ShoppingMall: React.FC = () => {
   let categories: any = useSelector((s: RootState) => s.categories);
-  let carousels: any = useSelector((s: RootState) => s.carousels);
   let loading = categories.loading;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -59,38 +58,37 @@ export const ShoppingMall: React.FC = () => {
   };
 
   return categories.loading === true ? (
+    
     <h1>"loading"</h1>
+    
   ) : (
-    <div>
-      <Fragment> </Fragment>
-      <div id="content">
-        <NavFragment></NavFragment>
-        <div id="banner">
-          <div className="all-sort-list">
-            {categories.error != null
-              ? "error"
-              : categories.categoryList.data.map((category, index) => {
-                  return (
-                    <FirstComponent
-                      key={index}
-                      onMouseOverHandler={onMouseOverHandler}
-                      onMouseOutHandler={onMouseOutHandler}
-                      category={category}
-                      index={index}
-                    ></FirstComponent>
-                  );
-                })}
-          </div>
-          <Carousel></Carousel>
+    <Fragment>  </Fragment>
+ 
+    <div id="content">
+     
+      <NavFragment></NavFragment>
+      <div id="banner">
+        <div className="all-sort-list">
+          {categories.error != null
+            ? "error"
+            : categories.categoryList.data.map((category, index) => {
+                return (
+                  <FirstComponent
+                    onMouseOverHandler={onMouseOverHandler}
+                    onMouseOutHandler={onMouseOutHandler}
+                    category={category}
+                    index={index}
+                  ></FirstComponent>
+                );
+              })}
         </div>
-        <HotGoodses data={hotGoodses} idx6={hotGoodses}></HotGoodses>
-        <NewGoods newGoodses={newGoodses} idx5={newGoodses}></NewGoods>
-        <RecommendGoodses
-          recommendGoodses={recommendGoodses}
-          idxza1={recommendGoodses}
-        ></RecommendGoodses>
-        <NewBeeFooter></NewBeeFooter>
+        <Carousel></Carousel>
       </div>
+      <HotGoodses data={hotGoodses} idx={hotGoodses} idx1={hotGoodses}></HotGoodses>
+      <NewGoods newGoodses={newGoodses}></NewGoods>
+      <RecommendGoodses recommendGoodses={recommendGoodses}></RecommendGoodses>
+      <NewBeeFooter></NewBeeFooter>
     </div>
+  
   );
 };

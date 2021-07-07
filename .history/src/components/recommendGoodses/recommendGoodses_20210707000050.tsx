@@ -13,12 +13,12 @@ interface isProps {
 }
 interface props2 {
   recommendGoodses: isProps[];
-  idxza1: number;
+  idxza: number;
 }
 
 export const RecommendGoodses: React.FC<props2> = ({
   recommendGoodses,
-  idxza1,
+  idxza,
 }) => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -28,7 +28,7 @@ export const RecommendGoodses: React.FC<props2> = ({
   return recommendGoodses === undefined ? (
     <h2>recommendGoodses</h2>
   ) : (
-    <div id="recommend" key={idxza1} >
+    <div id="recommend" key={idxza}>
       <h2>为你推荐</h2>
       <a href="##" className="more">
         查看更多{">>"}

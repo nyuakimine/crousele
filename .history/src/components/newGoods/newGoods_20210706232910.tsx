@@ -11,48 +11,36 @@ interface isProps {
   sellingPrice: BigInteger;
   tag: string;
 }
-interface props2 {
-  recommendGoodses: isProps[];
-  idxza1: number;
+interface props {
+  newGoodses: isProps[];
+  idx2: number;
+
 }
 
-export const RecommendGoodses: React.FC<props2> = ({
-  recommendGoodses,
-  idxza1,
-}) => {
+export const NewGoods: React.FC<props> = ({ newGoodses, idx2 }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchNewAndRecommendGoodsesDataActionCreator());
   }, []);
-
-  return recommendGoodses === undefined ? (
-    <h2>recommendGoodses</h2>
+  return newGoodses === undefined ? (
+    <h2>newGoodses</h2>
   ) : (
-    <div id="recommend" key={idxza1} >
-      <h2>为你推荐</h2>
-      <a href="##" className="more">
-        查看更多{">>"}
-      </a>
+    <div id="flash" key={idx2}>
+      <h2>新品上线</h2>
       <ul>
-        {recommendGoodses.map((goods, idxza) => {
-          //console.log(goods);
+        {newGoodses.map((goods) => {
           return (
-            <li key={idxza}>
+            <li >
               <a
                 href={`http://localhost:8081/goods/detail/goodsId=${goods.goodsId}`}
               >
-                <div className="info discount">{goods.tag}</div>
                 <img
                   src={`http://localhost:8081/${goods.goodsCoverImg}`}
                   alt={goods.goodsName}
                 ></img>
                 <p className="name">{goods.goodsName}</p>
+                <p className="discount">{goods.goodsIntro}</p>
                 <p className="item_price">{goods.sellingPrice}</p>
-                <p className="counter">猜你喜欢</p>
-                <div className="comment">
-                  <p>新蜂精选</p>
-                  <p>好物也可以不贵</p>
-                </div>
               </a>
             </li>
           );

@@ -61,36 +61,38 @@ export const ShoppingMall: React.FC = () => {
   return categories.loading === true ? (
     <h1>"loading"</h1>
   ) : (
-    <div>
+    <div id="content">
       <Fragment> </Fragment>
-      <div id="content">
-        <NavFragment></NavFragment>
-        <div id="banner">
-          <div className="all-sort-list">
-            {categories.error != null
-              ? "error"
-              : categories.categoryList.data.map((category, index) => {
-                  return (
-                    <FirstComponent
-                      key={index}
-                      onMouseOverHandler={onMouseOverHandler}
-                      onMouseOutHandler={onMouseOutHandler}
-                      category={category}
-                      index={index}
-                    ></FirstComponent>
-                  );
-                })}
-          </div>
-          <Carousel></Carousel>
+
+      <NavFragment></NavFragment>
+      <div id="banner">
+        <div className="all-sort-list">
+          {categories.error != null
+            ? "error"
+            : categories.categoryList.data.map((category, index) => {
+                return (
+                  <FirstComponent
+                    onMouseOverHandler={onMouseOverHandler}
+                    onMouseOutHandler={onMouseOutHandler}
+                    category={category}
+                    index={index}
+                  ></FirstComponent>
+                );
+              })}
         </div>
-        <HotGoodses data={hotGoodses} idx6={hotGoodses}></HotGoodses>
-        <NewGoods newGoodses={newGoodses} idx5={newGoodses}></NewGoods>
-        <RecommendGoodses
-          recommendGoodses={recommendGoodses}
-          idxza1={recommendGoodses}
-        ></RecommendGoodses>
-        <NewBeeFooter></NewBeeFooter>
+        <Carousel idx3={carousels}></Carousel>
       </div>
+      <HotGoodses
+        data={hotGoodses}
+        idx={hotGoodses}
+        idx1={hotGoodses}
+      ></HotGoodses>
+      <NewGoods newGoodses={newGoodses} idx5={newGoodses}></NewGoods>
+      <RecommendGoodses
+        recommendGoodses={recommendGoodses}
+        idxza={recommendGoodses}
+      ></RecommendGoodses>
+      <NewBeeFooter></NewBeeFooter>
     </div>
   );
 };

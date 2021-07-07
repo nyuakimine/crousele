@@ -57,40 +57,40 @@ export const ShoppingMall: React.FC = () => {
     );
     itemList[0].style.display = "none";
   };
+  <Fragment> </Fragment>
 
   return categories.loading === true ? (
     <h1>"loading"</h1>
   ) : (
-    <div>
-      <Fragment> </Fragment>
-      <div id="content">
-        <NavFragment></NavFragment>
-        <div id="banner">
-          <div className="all-sort-list">
-            {categories.error != null
-              ? "error"
-              : categories.categoryList.data.map((category, index) => {
-                  return (
-                    <FirstComponent
-                      key={index}
-                      onMouseOverHandler={onMouseOverHandler}
-                      onMouseOutHandler={onMouseOutHandler}
-                      category={category}
-                      index={index}
-                    ></FirstComponent>
-                  );
-                })}
-          </div>
-          <Carousel></Carousel>
+   
+    <div id="content">
+     
+      <NavFragment></NavFragment>
+      <div id="banner">
+        <div className="all-sort-list">
+          {categories.error != null
+            ? "error"
+            : categories.categoryList.data.map((category, index) => {
+                return (
+                  <FirstComponent
+                    key={index}
+                    onMouseOverHandler={onMouseOverHandler}
+                    onMouseOutHandler={onMouseOutHandler}
+                    category={category}
+                    index={index}
+                  ></FirstComponent>
+                );
+              })}
         </div>
-        <HotGoodses data={hotGoodses} idx6={hotGoodses}></HotGoodses>
-        <NewGoods newGoodses={newGoodses} idx5={newGoodses}></NewGoods>
-        <RecommendGoodses
-          recommendGoodses={recommendGoodses}
-          idxza1={recommendGoodses}
-        ></RecommendGoodses>
-        <NewBeeFooter></NewBeeFooter>
+        <Carousel></Carousel>
       </div>
+      <HotGoodses data={hotGoodses} idx6={hotGoodses}></HotGoodses>
+      <NewGoods newGoodses={newGoodses} idx5={newGoodses}></NewGoods>
+      <RecommendGoodses
+        recommendGoodses={recommendGoodses}
+        idxza1={recommendGoodses}
+      ></RecommendGoodses>
+      <NewBeeFooter></NewBeeFooter>
     </div>
   );
 };

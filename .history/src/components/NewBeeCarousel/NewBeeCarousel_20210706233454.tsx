@@ -14,6 +14,10 @@ import { Image, Carousel as AntCarousel } from "antd";
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
 
+// interface pIf {
+ 
+//   idx3: number;
+// }
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -27,9 +31,8 @@ export const Carousel: React.FC = () => {
     dispatch(fetchCarouselsDataActionCreator());
   }, []);
   return  carousels === undefined?(<h2>carousels</h2>):(
-    <div className="swiper-container fl" >
+    <div className="swiper-container fl">
       <Swiper
-
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -42,9 +45,9 @@ export const Carousel: React.FC = () => {
         navigation={true}
         className="mySwiper"
       >
-        {carousels.carouselUrl.data.map((img,idxb) =>{
+        {carousels.carouselUrl.data.map((img,idx3) =>{
           console.log(img);
-          return <SwiperSlide key={idxb}>
+          return <SwiperSlide key={idx3}>
             <img src={img.carouselUrl} alt="" />
             
           </SwiperSlide>;

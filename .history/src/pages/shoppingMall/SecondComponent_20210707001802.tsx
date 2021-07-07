@@ -6,19 +6,15 @@ interface ifProps {
   vos2: any;
 }
 
-export const SecondComponent: React.FC<ifProps> = ({
-  categoryName,
-  Idx,
-  vos2,
-}) => {
+export const SecondComponent: React.FC<ifProps> = ({ categoryName, Idx ,vos2}) => {
   return (
     <dl className="fore1" key={Idx}>
       <dt>{categoryName}</dt>
       <dd>
-        {vos2.thirdLevelCategoryVOS.map((vos3, thirdIdx) => {
+        {vos2.thirdLevelCategoryVOS.map((vos3, thirdIdx,index3) => {
           return (
             <EmComponent
-              key={thirdIdx}
+          key={index3}
               idx={thirdIdx}
               categoryId={vos3.categoryId}
               categoryName={vos3.categoryName}

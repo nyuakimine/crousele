@@ -29,7 +29,7 @@ export const FirstComponent: React.FC<ifProps> = ({
           {category.secondLevelCategoryVOS.map((vos2, secondIdx) => {
             return (
               <SecondComponent
-                key={secondIdx}
+             
                 Idx={secondIdx}
                 categoryName={vos2.categoryName}
                 vos2={vos2}
