@@ -42,7 +42,6 @@ img {
   user-select: none;
   -webkit-user-select: none;
   float:left;
-  margin-left: auto;
   
 }
 
@@ -92,7 +91,7 @@ img {
 
 .row{
   background-color: white;
-  width: 45%;
+  width: 50%;
   margin-left: 0px;
   margin-right: opx;
 }

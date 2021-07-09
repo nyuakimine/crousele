@@ -9,7 +9,7 @@ import "swiper/components/thumbs/thumbs.min.css";
 import SwiperCore, { Navigation, Thumbs } from "swiper/core";
 // install Swiper modules
 import { RootState } from "../../redux/store";
-import { decrement, increment,clickImg } from "./leftImgSlice";
+import { decrement, increment } from "./leftImgSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 SwiperCore.use([Navigation, Thumbs]);
@@ -66,7 +66,7 @@ export const LeftImgF1: React.FC<pIf> = ({ data }) => {
                 // src={`http://localhost:8081/goods-img/4755f3e5-257c-424c-a5f4-63908061d6d9.jpg`}
                 src={`http://localhost:8081${img.path}`}
                 alt="The Woods"
-                 onClick={() => dispatch(clickImg(idx))}
+                // onClick={() => dispatch(clickImg())}
               />
                                                    
             </div>

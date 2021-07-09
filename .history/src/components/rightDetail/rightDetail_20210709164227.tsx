@@ -35,7 +35,7 @@ export const RightDetail: React.FC = () => {
           <dt>支付</dt>
           <dd>
             <a href="##" target="_blank">
-              <img src="http://localhost:8081/mall/image/hua.png" />
+              <img src="@http://localhost:8081/mall/image/hua.png" />
               蚂蚁花呗
             </a>
             <a href="##" target="_blank">

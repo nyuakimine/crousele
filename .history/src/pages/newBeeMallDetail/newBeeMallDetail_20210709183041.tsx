@@ -59,12 +59,15 @@ export const NewBeeMallDetail: React.FC<RouteComponentProps<MatchParams>> =
           </div>
 
           <div className="intro mt20 w clearfix">
+            <div>
             <div className="left fl" style={{ position: "relative" }}>
               <div className="swiper-container fl">
                 <LeftImgF1 data={product}></LeftImgF1>
               </div>
             </div>
             <RightDetail></RightDetail>
+            {/* <div className="clear"></div> */}
+            </div>
             <div id="sizeQAContainer">
               <div id="innerSizeQAContainer">
                 <GoodsDescDetail></GoodsDescDetail>

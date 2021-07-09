@@ -495,7 +495,6 @@ section.g-grid_item.g-sm-block-sm {
   font-size: 1.5rem;
 }
 .zv-cqa-posting-rule-title {
-  height: 50%;
   font-weight: bold;
   margin: 10px 0;
   line-height: 1.5;
@@ -1535,8 +1534,10 @@ a {
 
 #detail .intro .right {
   width: 620px;
-  background: #ebebeb;
-  padding-bottom: 500px;
+  background: #f8f8f8;
+  padding-bottom: 50px;
+  margin-top: 50px;
+ height: 680px;
 }
 
 #detail .intro .right .sub_title {

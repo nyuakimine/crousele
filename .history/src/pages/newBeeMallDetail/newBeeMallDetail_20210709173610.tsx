@@ -11,8 +11,8 @@ import { Spin } from "antd";
 import { fetchDetailDataActionCreator } from "../../redux/detailNewBeeMall/fetchDetailActions";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
-import { QaNewBeeMall } from "../../components/qaNewBeeMall";
-import { ReviewNewBeeMall } from "../../components/reviewNewBeeMall/review";
+import {QaNewBeeMall} from "../../components/qaNewBeeMall"
+import  {ReviewNewBeeMall} from "../../components/reviewNewBeeMall/review"
 interface MatchParams {
   goodsId: string;
 }
@@ -57,27 +57,29 @@ export const NewBeeMallDetail: React.FC<RouteComponentProps<MatchParams>> =
               <div className="clear"></div>
             </div>
           </div>
-
-          <div className="intro mt20 w clearfix">
-            <div className="left fl" style={{ position: "relative" }}>
-              <div className="swiper-container fl">
-                <LeftImgF1 data={product}></LeftImgF1>
-              </div>
-            </div>
-            <RightDetail></RightDetail>
-            <div id="sizeQAContainer">
-              <div id="innerSizeQAContainer">
-                <GoodsDescDetail></GoodsDescDetail>
-                <section className="g-grid_item g-sm-block-sm">
-                  <QaNewBeeMall></QaNewBeeMall>
-                  <ReviewNewBeeMall></ReviewNewBeeMall>
-                </section>
-              </div>
+        
+        <div className="intro mt20 w clearfix">
+          <div className="left fl" style={{ position: "relative" }}>
+            <div className="swiper-container fl">
+              <LeftImgF1 data={product}></LeftImgF1>
             </div>
           </div>
+          <RightDetail></RightDetail>
+          {/* <div className="clear"></div> */}
+        
+        <div id="sizeQAContainer">
+        <GoodsDescDetail></GoodsDescDetail>
+          <div id="innerSizeQAContainer">
+           
+            <section className="g-grid_item g-sm-block-sm">
+            <QaNewBeeMall></QaNewBeeMall>
+            <ReviewNewBeeMall></ReviewNewBeeMall>
+            </section>
+          </div>
+        </div>
+        </div>
         </div>
         <NewBeeFooter></NewBeeFooter>
-        <div className="goods mt20 w clearfix"></div>
       </div>
     );
   };

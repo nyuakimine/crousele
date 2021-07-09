@@ -15,21 +15,18 @@ export const slice = createSlice({
   name: "leftImg",
   initialState,
   reducers: {
-    clickImg: (state, action) => {
-      state.counter = action.payload;
-    },
     increment: (state, action) => {
-      console.log("xxxx", action);
+        console.log(action);
       state.counter += 1;
-      if (state.counter > action.payload - 1) {
+      if (state.counter > 2) {
         state.counter = 0;
       }
     },
     decrement: (state, action) => {
-      console.log("aaaa", action);
+        console.log(action);
       state.counter -= 1;
       if (state.counter < 0) {
-        state.counter = action.payload - 1;
+        state.counter = 2;
       }
     },
     // clickImg:()=>{
@@ -42,6 +39,6 @@ export const slice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount,clickImg } = slice.actions;
+export const { increment, decrement, incrementByAmount } = slice.actions;
 
 export default slice.reducer;

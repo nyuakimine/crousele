@@ -495,7 +495,6 @@ section.g-grid_item.g-sm-block-sm {
   font-size: 1.5rem;
 }
 .zv-cqa-posting-rule-title {
-  height: 50%;
   font-weight: bold;
   margin: 10px 0;
   line-height: 1.5;
@@ -1535,8 +1534,8 @@ a {
 
 #detail .intro .right {
   width: 620px;
-  background: #ebebeb;
-  padding-bottom: 500px;
+  background: #f8f8f8;
+  padding-bottom: 50px;
 }
 
 #detail .intro .right .sub_title {
@@ -1559,7 +1558,7 @@ a {
 #detail .intro .right .item_price del {
   font-size: 14px;
   margin-left: 5px;
-  color: #b0b0b0;
+  color: #6d2020;
   text-decoration: line-through;
 }
 

@@ -9,12 +9,11 @@ export const RightDetail: React.FC = () => {
         4GB+64GB 魅焰红 移动联通电信4G全面屏手机 双卡双待
       </div>
       <div className="item_price mr40 ml20 mt10">
-         999.00 元
-        <del> 1399.00 元</del>
+        <del></del>
       </div>
       <div className="order">
         <input className="car" type="button" value="立即选购" />
-        <input className="car" type="button" value="加入购物车" />
+        <input className="car" type="button" />
       </div>
       <div className="tb-extra ml20" id="J_tbExtra">
         <dl>
@@ -35,7 +34,7 @@ export const RightDetail: React.FC = () => {
           <dt>支付</dt>
           <dd>
             <a href="##" target="_blank">
-              <img src="http://localhost:8081/mall/image/hua.png" />
+              <img src="@http://localhost:8081/mall/image/hua.png" />
               蚂蚁花呗
             </a>
             <a href="##" target="_blank">

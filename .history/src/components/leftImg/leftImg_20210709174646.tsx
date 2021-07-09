@@ -9,7 +9,7 @@ import "swiper/components/thumbs/thumbs.min.css";
 import SwiperCore, { Navigation, Thumbs } from "swiper/core";
 // install Swiper modules
 import { RootState } from "../../redux/store";
-import { decrement, increment,clickImg } from "./leftImgSlice";
+import { decrement, increment } from "./leftImgSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 SwiperCore.use([Navigation, Thumbs]);
@@ -24,7 +24,6 @@ interface pIf {
 
 export const LeftImgF1: React.FC<pIf> = ({ data }) => {
   const count = useSelector((state: RootState) => state.leftImg.counter);
-  const imgLength = useSelector((state: RootState) => state.detailNewBeeMall.data.data.length);
   const currentBigImage = data.filter(
     (num, index) => index === count
   )[0] as ifProps;
@@ -33,6 +32,8 @@ export const LeftImgF1: React.FC<pIf> = ({ data }) => {
   return data === undefined ? (
     <h2>loading...</h2>
   ) : (
+    <div className="left fl" style={{ position: "relative" }}>
+              <div className="swiper-container fl"></div>
     <div className="container">
       {/* {currentBigImage((img, idx) => { */}
       <div className="mySlides">
@@ -52,7 +53,7 @@ export const LeftImgF1: React.FC<pIf> = ({ data }) => {
       </div>
                   
       <div className="row">
-        <button className="next" onClick={() => dispatch(decrement(imgLength))}>
+        <button className="next" onClick={() => dispatch(decrement())}>
           ❮
         </button>
         {data.map((img, idx) => {
@@ -60,25 +61,25 @@ export const LeftImgF1: React.FC<pIf> = ({ data }) => {
             <div className="column" key={idx}>
                 
               <img
-             
                 className="demo cursor"
                 style={{ width: "100%" }}
                 // src={`http://localhost:8081/goods-img/4755f3e5-257c-424c-a5f4-63908061d6d9.jpg`}
                 src={`http://localhost:8081${img.path}`}
                 alt="The Woods"
-                 onClick={() => dispatch(clickImg(idx))}
               />
                                                    
             </div>
           );
         })}
                  
-        <button className="prev" onClick={() => dispatch(increment(imgLength))}>
+        <button className="prev" onClick={() => dispatch(increment())}>
           ❯
         </button>
                                 
       </div>
          
     </div>
+    </div>
+      
   );
 };

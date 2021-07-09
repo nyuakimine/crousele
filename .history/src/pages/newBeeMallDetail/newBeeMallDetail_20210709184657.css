@@ -1467,8 +1467,8 @@ a {
 
 #detail .dc .content .title {
   width: 300px;
-  height: 58px;
-  line-height: 50%;
+  height: 35px;
+  line-height: 58px;
   font-size: 22px;
   font-weight: bold;
 }
@@ -1535,7 +1535,7 @@ a {
 
 #detail .intro .right {
   width: 620px;
-  background: #ebebeb;
+  background: #f8f8f8;
   padding-bottom: 500px;
 }
 

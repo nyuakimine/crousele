@@ -65,6 +65,7 @@ export const NewBeeMallDetail: React.FC<RouteComponentProps<MatchParams>> =
               </div>
             </div>
             <RightDetail></RightDetail>
+            {/* <div className="clear"></div> */}
             <div id="sizeQAContainer">
               <div id="innerSizeQAContainer">
                 <GoodsDescDetail></GoodsDescDetail>
