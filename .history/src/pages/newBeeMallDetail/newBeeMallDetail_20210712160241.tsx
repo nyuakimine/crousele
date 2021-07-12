@@ -27,7 +27,7 @@ export const NewBeeMallDetail: React.FC<RouteComponentProps<MatchParams>> =
     const desc = useSelector((state) => state.descSlice.data);
     const qaList = useSelector((state) => state.qaListSlice.data);
     const reviewList = useSelector((state) => state.reviewListSlice.data);
-    const qaPage = useSelector((state) => state.qaPageSlice.data)
+    const qaPage = useSelector((state) => state.qaPageSlice.data.list)
     console.log("qaPagexxxxxxxxxxx", qaPage);
 
     const dispatch = useDispatch();

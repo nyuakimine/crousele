@@ -27,8 +27,8 @@ export const NewBeeMallDetail: React.FC<RouteComponentProps<MatchParams>> =
     const desc = useSelector((state) => state.descSlice.data);
     const qaList = useSelector((state) => state.qaListSlice.data);
     const reviewList = useSelector((state) => state.reviewListSlice.data);
-    const qaPage = useSelector((state) => state.qaPageSlice.data)
-    console.log("qaPagexxxxxxxxxxx", qaPage);
+    //const qaPage = useSelector((state) => state.qaPageSlice.data.list)
+    console.log("qaPagexxxxxxxxxxx", qaList);
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -76,7 +76,7 @@ export const NewBeeMallDetail: React.FC<RouteComponentProps<MatchParams>> =
               <div id="innerSizeQAContainer">
                 <GoodsDescDetail data={desc}></GoodsDescDetail>
                 <section className="g-grid_item g-sm-block-sm">
-                  <QaNewBeeMall data={qaPage}></QaNewBeeMall>
+                  <QaNewBeeMall data={qaList}></QaNewBeeMall>
                   <ReviewNewBeeMall data={reviewList}></ReviewNewBeeMall>
                 </section>
               </div>

@@ -21,7 +21,6 @@ import {newBeeMallDescSlice} from './descSlice/fetchDescListSlice'
 import {newBeeMallQaSlice} from './qaListSlice/fetchQaListSlice'
 import {newBeeMallReviewSlice} from './reviewListSlice/fetchReviewListSlice'
 import {newBeeMallQaPagingSlice} from './qaPageSlice/fetchQaPagingSlice'
-import {qaPageNoSlice} from '../components/qaNewBeeMall/qaPageSlice'
 const persistConfig = {
   key: "root",
   storage,
@@ -46,7 +45,6 @@ const rootReducer = combineReducers({
     qaListSlice: newBeeMallQaSlice.reducer,
     reviewListSlice: newBeeMallReviewSlice.reducer,
     qaPageSlice: newBeeMallQaPagingSlice.reducer,
-    qaPageNo: qaPageNoSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

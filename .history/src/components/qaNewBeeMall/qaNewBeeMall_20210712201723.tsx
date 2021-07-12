@@ -4,10 +4,10 @@ import { RootState } from "../../redux/store";
 import { fetchQaDataActionCreator } from "../../redux/qaListSlice/fetchQaListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { RouteComponentProps, useParams } from "react-router-dom";
-// import {
-//   decrement,
-//   increment,
-// } from "../../redux/qaPageSlice/fetchQaPagingSlice";
+import {
+  decrement,
+  increment,
+} from "../../redux/qaPageSlice/fetchQaPagingSlice";
 import { fetchQaPagingDataActionCreator } from "../../redux/qaPageSlice/fetchQaPagingSlice";
 interface ifProps {
   goodsId: number;

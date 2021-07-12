@@ -4,10 +4,10 @@ import { RootState } from "../../redux/store";
 import { fetchQaDataActionCreator } from "../../redux/qaListSlice/fetchQaListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { RouteComponentProps, useParams } from "react-router-dom";
-// import {
-//   decrement,
-//   increment,
-// } from "../../redux/qaPageSlice/fetchQaPagingSlice";
+import {
+  decrement,
+  increment,
+} from "../../redux/qaPageSlice/fetchQaPagingSlice";
 import { fetchQaPagingDataActionCreator } from "../../redux/qaPageSlice/fetchQaPagingSlice";
 interface ifProps {
   goodsId: number;
@@ -31,7 +31,7 @@ export const QaNewBeeMall: React.FC<pIf> = ({ data }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchQaPagingDataActionCreator(qaPage));
-  }, []);
+  }, [qaPage]);
   return data === null ? (
     <h2>loading...</h2>
   ) : (
@@ -76,7 +76,7 @@ export const QaNewBeeMall: React.FC<pIf> = ({ data }) => {
             <div className="zv-cqa-step-link">
               <span
                 className="previousPage"
-                onClick={() => dispatch(fetchQaPagingDataActionCreator(qaPage-1))}
+                onClick={() => dispatch(decrement(data))}
               >
                 前ページ
               </span>
@@ -86,7 +86,7 @@ export const QaNewBeeMall: React.FC<pIf> = ({ data }) => {
               </span>
               <span
                 className="nextPage"
-                onClick={() => dispatch(fetchQaPagingDataActionCreator(qaPage+1))}
+                onClick={() => dispatch(increment(data))}
               >
                 次ページ
               </span>

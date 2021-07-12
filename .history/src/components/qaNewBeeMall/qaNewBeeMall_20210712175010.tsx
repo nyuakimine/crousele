@@ -4,10 +4,10 @@ import { RootState } from "../../redux/store";
 import { fetchQaDataActionCreator } from "../../redux/qaListSlice/fetchQaListSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { RouteComponentProps, useParams } from "react-router-dom";
-// import {
-//   decrement,
-//   increment,
-// } from "../../redux/qaPageSlice/fetchQaPagingSlice";
+import {
+  decrement,
+  increment,
+} from "../../redux/qaPageSlice/fetchQaPagingSlice";
 import { fetchQaPagingDataActionCreator } from "../../redux/qaPageSlice/fetchQaPagingSlice";
 interface ifProps {
   goodsId: number;
@@ -21,15 +21,19 @@ interface ifProps {
 interface pIf {
   data: ifProps[];
 }
+interface MatchParams {
+  goodsId: string;
+}
 
 export const QaNewBeeMall: React.FC<pIf> = ({ data }) => {
-  let qaPage = useSelector((state: RootState) => state.qaPageSlice.page);
+  const qaPage = useSelector((state: RootState) => state.qaPageSlice.page);
 
   //console.log("qqqqqqqqQaPage", qaPage);
   //console.log("xxxxxxQadata", data);
-
+  const { goodsId } = useParams<MatchParams>();
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(fetchQaDataActionCreator(goodsId));
     dispatch(fetchQaPagingDataActionCreator(qaPage));
   }, []);
   return data === null ? (
@@ -76,17 +80,17 @@ export const QaNewBeeMall: React.FC<pIf> = ({ data }) => {
             <div className="zv-cqa-step-link">
               <span
                 className="previousPage"
-                onClick={() => dispatch(fetchQaPagingDataActionCreator(qaPage-1))}
+                onClick={() => dispatch(decrement(data))}
               >
                 前ページ
               </span>
               <span>全2件</span>
               <span>
-                ページ<span id="currentPageNo" >{qaPage}</span>/5
+                ページ<span id="currentPageNo">1</span>/5
               </span>
               <span
                 className="nextPage"
-                onClick={() => dispatch(fetchQaPagingDataActionCreator(qaPage+1))}
+                onClick={() => dispatch(increment(data))}
               >
                 次ページ
               </span>
