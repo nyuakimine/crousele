@@ -17,7 +17,14 @@ const initialState: NewBeeMallProductQaInsertState = {
   data: null,
 
 };
-
+// export const fetchQaInsertDataActionCreator = createAsyncThunk(
+//   "qaInsertSlice/fetchQaInsertDataActionCreator",
+//   async (question: any, thunkAPI) => {
+//     const { data } = await axios.post(`http://localhost:8081/insertQa`, question
+//     );
+//     return data;
+//   }
+// );
 export const fetchQaInsertDataActionCreator = createAsyncThunk(
   "qaInsertSlice/fetchQaInsertDataActionCreator",
   async (question: any, thunkAPI) => {

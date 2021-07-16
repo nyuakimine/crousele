@@ -17,7 +17,14 @@ const initialState: NewBeeMallProductQaInsertState = {
   data: null,
 
 };
-
+// export const fetchQaInsertDataActionCreator = createAsyncThunk(
+//   "qaInsertSlice/fetchQaInsertDataActionCreator",
+//   async (question: any, thunkAPI) => {
+//     const { data } = await axios.post(`http://localhost:8081/insertQa`, question
+//     );
+//     return data;
+//   }
+// );
 export const fetchQaInsertDataActionCreator = createAsyncThunk(
   "qaInsertSlice/fetchQaInsertDataActionCreator",
   async (question: any, thunkAPI) => {
@@ -25,12 +32,23 @@ export const fetchQaInsertDataActionCreator = createAsyncThunk(
     );
     if(data!=null){
       debugger;
+      //let qaPage = useSelector((state: RootState) => state.qaPageSlice.page);
       thunkAPI.dispatch(fetchQaPagingDataActionCreator(1))
     }
-
+  //  useEffect(() => {
+  //   thunkAPI.dispatch(fetchQaPagingDataActionCreator(1));
+  // }, [])
+    
     return data;
   }
 );
+
+
+// .then(data => this.setState({ users: data.data.data }))
+// .catch(err => {
+//     console.log(err);
+//     return null;
+// });
 export const newBeeMallQaInsertSlice = createSlice({
   name: "qaInsertSlice",
   initialState,
