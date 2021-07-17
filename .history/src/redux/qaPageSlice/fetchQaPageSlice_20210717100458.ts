@@ -38,7 +38,7 @@ export const newBeeMallQaPagingSlice = createSlice({
      // debugger;
       console.log("lllllllQaPaging", action.payload);
       state.data = action.payload.data;
-      state.page = action.payload.data.currPage;
+      //state.page = action.payload.data.currPage;
      // console.log("wwwwwwwwwwwwwwwwQaPaging",state.page);
        //state.page = action.payload.page;
 

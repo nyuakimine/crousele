@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "../../redux/hooks";
 import { RouteComponentProps, useParams } from "react-router-dom";
 import { RootState } from "../../redux/store";
-import { fetchHelpNumDataActionCreator } from "../../redux/reviewHelpNumSlice/reviewHelpNumSlice";
+import {fetchHelpNumDataActionCreator} from "../../redux/reviewHelpNumSlice/reviewHelpNumSlice"
 interface ifProps {
   id: any;
   goodsId: number;
@@ -49,39 +49,30 @@ export const ReviewNewBeeMall: React.FC<pIf> = () => {
   }, []);
 
   const ids = initialList.map((item) => item.id);
-  const showMoreReviewsBtn = (e) => {
+  const showMoreReviewsBtn = () => {
     dispatch(fetchOpenAndCloseDataActionCreator({ goodsId, ids }));
-    // if (ids != null) {
-    // debugger;
-    const showList = document.getElementsByClassName(
-      "closeShowLists"
-    )[0] as HTMLElement;
-    showList.style.display = "none";
-    const cshowList = document.getElementsByClassName(
-      "closeCloseBtn"
-    )[0] as HTMLElement;
-    cshowList.style.display = "block";
+   // if (ids != null) {
+     // debugger;
+      const showList = document.getElementsByClassName( "closeShowLists")[0] as HTMLElement;
+      showList.style.display = "none";
+      const cshowList = document.getElementsByClassName( "closeCloseBtn")[0] as HTMLElement;
+      cshowList.style.display = "block";
     //}
   };
 
-  const closeShowMoreReviewsBtn = (e) => {
+  const closeShowMoreReviewsBtn = () => {
     dispatch(closeShowList());
-    // if (ids != null) {
-    const cshowList = document.getElementsByClassName(
-      "closeCloseBtn"
-    )[0] as HTMLElement;
-    cshowList.style.display = "none";
-    const showList = document.getElementsByClassName(
-      "closeShowLists"
-    )[0] as HTMLElement;
-    showList.style.display = "block";
-    // }
+   // if (ids != null) {
+      const cshowList = document.getElementsByClassName("closeCloseBtn")[0] as HTMLElement;
+      cshowList.style.display = "none";
+      const showList = document.getElementsByClassName("closeShowLists")[0] as HTMLElement;
+      showList.style.display = "block";
+   // }
   };
-
-  const helpNumFun = (e) => {
-    debugger;
-    let reviewId = e.currentTarget.getAttribute("review-id");
-    dispatch(fetchHelpNumDataActionCreator({ reviewId }));
+   const helpNumFun = () => {
+    let reviewId = input.current?.value;
+    //input.current!.value = "";
+    dispatch(fetchHelpNumDataActionCreator(reviewId));
   };
 
   return initialList === null ? (
@@ -142,19 +133,11 @@ export const ReviewNewBeeMall: React.FC<pIf> = () => {
                           id="js-hitLike"
                           data-count="0"
                         >
-                          <i className="g-s g-s-like-g" aria-hidden="true">
-                          <img className="thumUpImg" src="http://localhost:8081/goods-img/thumUp.jpg"
-									     	   alt="Italian Trulli"/>
-                          </i>
-                          <span
-                            className="helpNumSpan"
-                            review-id={reviewList.id}
-                            onClick={helpNumFun}
-                          >
-                            {/* onClick={helpNumFun} */}
+                          <i className="g-s g-s-like-g" aria-hidden="true"></i>
+                          <span className="helpNumSpan" onClick={helpNumFun} >
                             参考になった: {reviewList.reviewNum}
                           </span>
-                          <span className="hidSpForRevId"> </span>
+                          <span className="hidSpForRevId" ref={input}> </span>
                         </a>
                       </p>
                     </li>
@@ -210,9 +193,7 @@ export const ReviewNewBeeMall: React.FC<pIf> = () => {
                           data-count="0"
                         >
                           <i className="g-s g-s-like-g" aria-hidden="true"></i>
-                          <span className="helpNumSpan" 
-                            review-id={reviewList.id}
-                            onClick={helpNumFun}>
+                          <span className="helpNumSpan">
                             参考になった: {reviewList.reviewNum}
                           </span>
                           <span className="hidSpForRevId"> </span>

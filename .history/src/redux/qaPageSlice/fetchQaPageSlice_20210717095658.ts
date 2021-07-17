@@ -12,7 +12,7 @@ const initialState: NewBeeMallProductQaPagingState = {
   loading: true,
   error: null,
   data:  {totalCount:0,pageSize:3,totalPage:0,currPage:1,list:[]},
-  page: 1,
+  page: 2,
 };
 
 export const fetchQaPagingDataActionCreator = createAsyncThunk(
@@ -39,7 +39,7 @@ export const newBeeMallQaPagingSlice = createSlice({
       console.log("lllllllQaPaging", action.payload);
       state.data = action.payload.data;
       state.page = action.payload.data.currPage;
-     // console.log("wwwwwwwwwwwwwwwwQaPaging",state.page);
+      console.log("wwwwwwwwwwwwwwwwQaPaging",state.page);
        //state.page = action.payload.page;
 
       state.loading = false;

@@ -77,10 +77,10 @@ export const ReviewNewBeeMall: React.FC<pIf> = () => {
     showList.style.display = "block";
     // }
   };
-
+  
   const helpNumFun = (e) => {
     debugger;
-    let reviewId = e.currentTarget.getAttribute("review-id");
+    let reviewId = e.currentTarget.getAttribute("reviewId");
     dispatch(fetchHelpNumDataActionCreator({ reviewId }));
   };
 
@@ -142,10 +142,7 @@ export const ReviewNewBeeMall: React.FC<pIf> = () => {
                           id="js-hitLike"
                           data-count="0"
                         >
-                          <i className="g-s g-s-like-g" aria-hidden="true">
-                          <img className="thumUpImg" src="http://localhost:8081/goods-img/thumUp.jpg"
-									     	   alt="Italian Trulli"/>
-                          </i>
+                          <i className="g-s g-s-like-g" aria-hidden="true"></i>
                           <span
                             className="helpNumSpan"
                             review-id={reviewList.id}
@@ -210,9 +207,7 @@ export const ReviewNewBeeMall: React.FC<pIf> = () => {
                           data-count="0"
                         >
                           <i className="g-s g-s-like-g" aria-hidden="true"></i>
-                          <span className="helpNumSpan" 
-                            review-id={reviewList.id}
-                            onClick={helpNumFun}>
+                          <span className="helpNumSpan">
                             参考になった: {reviewList.reviewNum}
                           </span>
                           <span className="hidSpForRevId"> </span>
